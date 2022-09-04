@@ -1,5 +1,16 @@
 <?php
-$posters = $Poster->all(['sh'=>1]," ORDER BY `rank` ")
+$posters = $Poster->all(['sh'=>1]," ORDER BY `rank` ");
+$now = date('Y-m-d');
+$start = date('Y-m-d',strtotime('-2 days'));
+$num = $Movie->math('COUNT','id'," WHERE `sh` = 1 AND `date` BETWEEN '$start' AND '$now'");
+$limit = 4;
+$pages = ceil($num/$limit);
+$page = ($_GET['page'])??1;
+if($page <= 0 || $page > $pages){
+    $page = 1;
+}
+$start = ($page-1)*$limit;
+$movies = $Movie->all(" WHERE `sh` = 1 AND `date` BETWEEN '$start' AND '$now' ORDER BY `rank` Limit $start,$limit");
 ?>
 <div class="half" style="vertical-align:top;">
     <h1>預告片介紹</h1>
@@ -46,12 +57,68 @@ $posters = $Poster->all(['sh'=>1]," ORDER BY `rank` ")
 <div class="half">
     <h1>院線片清單</h1>
     <div class="rb tab" style="width:95%;">
-        <table>
-            <tbody>
-                <tr> </tr>
-            </tbody>
-        </table>
-        <div class="ct"> </div>
+        <div class="movie d-f f-w">
+            <?php
+            foreach ($movies as $key => $movie) {
+                switch ($movie['type']) {
+                    case 1:
+                        $type = '普遍級';
+                    break;
+                    case 2:
+                        $type = '保護級';
+                    break;
+                    case 3:
+                        $type = '輔導級';
+                    break;
+                    case 4:
+                        $type = '限制級';
+                    break;
+                    
+                }
+            ?>
+            <div class="w-45 p-10 d-f f-w">
+                <div class="w-40">
+                    <img src="./upload/<?=$movie['img']?>" alt="" style="width: 70px;">
+                </div>
+                <div class="w-60" style="font-size: 12px;">
+                    <div class="p-2"><?=$movie['name']?></div>
+                    <div class="p-2">
+                    分級：<img src="./icon/03C0<?=$movie['type']?>.png" alt="" style="width: 15px;"><?=$type?>
+                    </div>
+                    <div class="p-2">
+                        上映日期：<?=$movie['date']?>
+                    </div>
+                </div>
+                <div class="w-100 p-10 ct">
+                    <input type="button" value="劇情簡介" onclick="location.href='?do=intro&id=<?=$movie['id']?>'">
+                    <input type="button" value="線上訂票" onclick="location.href='?do=order&id=<?=$movie['id']?>'">
+                </div>
+            </div>
+            <?php
+            }
+            ?>
+        </div>
+
+        <div class="ct page">
+            <?php
+            if($page > 1){
+            ?>
+            <a href="?page=<?=$page-1?>">&lt;</a>
+            <?php
+            }
+            for ($i=1; $i <= $pages ; $i++) { 
+            ?>
+            <a href="?page=<?=$i?>" class="<?=($page == $i)?'nowPage':''?>"><?=$i?></a>
+            <?php
+            }
+
+            if($page < $pages){
+            ?>
+            <a href="?page=<?=$page+1?>">&gt;</a>
+            <?php
+            }
+            ?>
+        </div>
     </div>
 </div>
 

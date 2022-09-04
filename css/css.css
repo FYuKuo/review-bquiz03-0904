@@ -221,6 +221,9 @@ input:focus
 .w-40 {
 	width: 40%;
 }
+.w-45 {
+	width: 45%;
+}
 .w-30 {
 	width: 30%;
 }
@@ -304,4 +307,54 @@ input:focus
 .p-r {
 	position: relative;
 	
+}
+
+.page a {
+	text-decoration: none;
+	color: white;
+}
+
+.nowPage {
+	font-size: 1.5rem;
+}
+
+.f-w {
+	flex-wrap: wrap;
+}
+
+.p-2 {
+	padding: 2px;
+}
+
+.book {
+	display: none;
+}
+
+.book_bg {
+	background-image: url(../icon/03D04.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 540px;
+	height: 370px;
+	margin: auto;
+}
+
+.book_sets {
+	width: 315px;
+	height: 343px;
+	margin: 0 auto;
+	padding-top: 17px;
+}
+
+.book_set_item {
+	width: calc(315px / 5);
+	height: calc(343px / 4);
+	background-image: url(../icon/03D02.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	justify-content: flex-end;
+}
+
+.hasPeople {
+	background-image: url(../icon/03D03.png);
 }
