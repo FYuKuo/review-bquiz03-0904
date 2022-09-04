@@ -12,7 +12,7 @@
         <div class="poster_list overflow">
             <table class="ct w-100 bcc">
                 <?php
-                $rows = $Poster->all();
+                $rows = $Poster->all(" ORDER BY `rank` ");
                 foreach ($rows as $key => $row) {
                     $pre = ($rows[$key-1]['id'])??$row['id'];
                     $next = ($rows[$key+1]['id'])??$row['id'];
@@ -25,8 +25,8 @@
                         <input type="text" name="name[]" id="name" value="<?=$row['name']?>">
                     </td>
                     <td>
-                        <input type="button" value="往上" onclick="rank(<?=$row['id']?>,<?=$pre?>)">
-                        <input type="button" value="往下" onclick="rank(<?=$row['id']?>,<?=$next?>)">
+                        <input type="button" value="往上" onclick="rank(<?=$row['id']?>,<?=$pre?>,'<?=$_GET['do']?>')">
+                        <input type="button" value="往下" onclick="rank(<?=$row['id']?>,<?=$next?>,'<?=$_GET['do']?>')">
                     </td>
                     <td>
                         <input type="checkbox" name="sh[]" class="sh" value="<?=$row['id']?>"
@@ -77,3 +77,11 @@
     </form>
 
 </div>
+
+<script>
+    function rank(id,chId,table){
+        $.post('./api/rank.php',{id,chId,table},()=>{
+            location.reload();
+        })
+    }
+</script>
