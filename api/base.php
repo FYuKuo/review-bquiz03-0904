@@ -137,4 +137,8 @@ function dd($array)
     print_r($array);
     echo "</pre>";
 }
+
+$Poster = new DB('poster');
+$Order = new DB('order');
+$Movie = new DB('movie');
 ?>

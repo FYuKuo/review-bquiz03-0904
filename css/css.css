@@ -233,6 +233,9 @@ input:focus
 .w-33 {
 	width: 33%;
 }
+.w-25,tr.w-25>td {
+	width: 25%;
+}
 .w-16 {
 	width: 16%;
 }
@@ -249,19 +252,42 @@ input:focus
 	justify-content: center;
 }
 
+.grey0 {
+	background-color: #eee;
+}
 .grey1 {
-	background-color: gray;
+	background-color: #ccc;
 }
 
 .grey2 {
-	background-color: #333;
+	background-color: #aaa;
 }
 
 .grey3 {
-	background-color: #1e1e1e;
+	background-color: #666;
 }
 
 .title {
 	font-size: 18px;
 	font-weight: bold;
+}
+
+.white {
+	background-color: white;
+}
+
+.overflow {
+	overflow: auto;
+}
+
+.poster_list {
+	height: 260px;
+}
+
+.bb {
+	box-sizing: border-box;
+}
+
+.bcc {
+	border-collapse: collapse;
 }
