@@ -22,14 +22,14 @@ input[type='text'],input[type='file'],input[type='password'],textarea,.button
 }
 input[type='button'],input[type='submit'],input[type='reset'],button,.button
 {
-	min-width:70px;
-	min-height:40px;
 	background:#000;
 	color:#fff;
 	border:none;
 	cursor:pointer;
-	font-size:18px;
+	font-size:12px;
 	text-decoration:none;
+	padding: 5px 10px;
+	border-radius: 5px;
 }
 input[type='button']:hover,input[type='submit']:hover,input[type='reset']:hover,button:hover,.button:hover
 {
@@ -185,4 +185,83 @@ input:focus
 .wx::selection
 {
 	cursor:default;
+}
+
+.m-auto {
+	margin: 0 auto;
+}
+
+.my-10{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.p-10 {
+	padding: 10px;
+}
+
+.w-100 {
+	width: 100%;
+}
+.w-90 {
+	width: 90%;
+}
+.w-80 {
+	width: 80%;
+}
+.w-70 {
+	width: 70%;
+}
+.w-60 {
+	width: 60%;
+}
+.w-50 {
+	width: 50%;
+}
+.w-40 {
+	width: 40%;
+}
+.w-30 {
+	width: 30%;
+}
+.w-20 {
+	width: 20%;
+}
+.w-10 {
+	width: 10%;
+}
+.w-33 {
+	width: 33%;
+}
+.w-16 {
+	width: 16%;
+}
+
+.d-f {
+	display: flex;
+}
+
+.a-c {
+	align-items: center;
+}
+
+.j-c {
+	justify-content: center;
+}
+
+.grey1 {
+	background-color: gray;
+}
+
+.grey2 {
+	background-color: #333;
+}
+
+.grey3 {
+	background-color: #1e1e1e;
+}
+
+.title {
+	font-size: 18px;
+	font-weight: bold;
 }

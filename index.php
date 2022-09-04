@@ -37,6 +37,14 @@ $do = ($_GET['do'])??'main';
 
         <div id="mm">
 
+        <?php
+          if(file_exists('./front/'.$do.'.php')){
+              include('./front/'.$do.'.php');
+          }else{
+              include('./front/main.php');
+          }
+        ?>
+
         </div>
 
         <div id="bo"> ©Copyright 2010~2014 ABC影城 版權所有 </div>
