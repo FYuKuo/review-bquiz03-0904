@@ -16,6 +16,8 @@ if(!isset($_SESSION['admin'])){
     <link rel="stylesheet" href="./css/css.css">
     <link href="./css/s2.css" rel="stylesheet" type="text/css">
     <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/js.js"></script>
+
 </head>
 
 <body>

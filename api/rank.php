@@ -8,6 +8,8 @@ $tmp = $nowData['rank'];
 $nowData['rank'] = $chData['rank'];
 $chData['rank'] = $tmp;
 
+// dd($nowData);
+// dd($chData);
 $DB->save($nowData);
 $DB->save($chData);
 ?>

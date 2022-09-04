@@ -291,3 +291,8 @@ input:focus
 .bcc {
 	border-collapse: collapse;
 }
+
+.movie_list {
+	height: 440px;
+
+}

@@ -88,7 +88,7 @@ class DB
                 }
             }
 
-            $sql = "UPDATE `poster` SET " . join(',',$tmp) . " WHERE `id` = '{$array['id']}' ";
+            $sql = "UPDATE `$this->table` SET " . join(',',$tmp) . " WHERE `id` = '{$array['id']}' ";
 
         }else{
             $col = join("`,`",array_keys($array));
@@ -97,6 +97,7 @@ class DB
             $sql = "INSERT INTO `$this->table` (`$col`) VALUES ('$val')";
         }
 
+        echo $sql;
         return $this->pdo->exec($sql);
     }
 
