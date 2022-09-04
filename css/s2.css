@@ -1,7 +1,45 @@
 @charset "utf-8";
 /* CSS Document */
+.poster {
+width: 420px;
+height: 400px;
+position: relative;
+overflow: hidden;
+}
 
-	#abgne-block-20111227 {
+.poster_item {
+	display: none;
+}
+
+
+.prebtn,.nextbtn{
+	border-style: solid;
+	border-width: 20px;
+	height: 0px;
+	width: 0px;
+	cursor: pointer;
+
+}
+
+.prebtn {
+	border-color: transparent black transparent transparent;
+}
+
+.nextbtn {
+	border-color: transparent transparent transparent black ;
+}
+
+.con_img {
+	height: 80px; 
+	padding:0 5px;
+	cursor: pointer;
+}
+
+.img_nav {
+	overflow: hidden;
+}
+
+/* #abgne-block-20111227 {
 	width: 420px;
 	height: 400px;
 	position: relative;
@@ -35,7 +73,7 @@
 }
 #abgne-block-20111227 .controls li a {
 	display: block;
-	width: 44px;	/* 寬度會影響未放大前顯示的字數 */
+	width: 44px;	寬度會影響未放大前顯示的字數
 	height: 35px;
 	line-height: 35px;
 	margin-right: 1px;
@@ -46,4 +84,4 @@
 }
 #abgne-block-20111227 .controls li.selected a {
 	background: #87bf00;
-}
+} */

@@ -296,3 +296,12 @@ input:focus
 	height: 440px;
 
 }
+
+.p-a {
+	position: absolute;
+}
+
+.p-r {
+	position: relative;
+	
+}
