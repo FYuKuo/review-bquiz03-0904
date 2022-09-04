@@ -1,6 +1,7 @@
 <?php
 $order = $Order->find(['no'=>$_GET['no']]);
 $sets = unserialize($order['set']);
+sort($sets);
 ?>
 
 <div class="grey0 m-auto w-60 p-10">
@@ -15,7 +16,7 @@ $sets = unserialize($order['set']);
                 電影名稱：
             </td>
             <td class="grey1">
-            <?=$Movie->find($order['id'])['name']?>
+            <?=$Movie->find($order['movie'])['name']?>
             </td>
         </tr>
         <tr>

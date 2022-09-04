@@ -239,8 +239,8 @@ input:focus
 .w-25,tr.w-25>td {
 	width: 25%;
 }
-.w-16 {
-	width: 16%;
+.w-15 {
+	width: 15%;
 }
 
 .d-f {
@@ -357,4 +357,14 @@ input:focus
 
 .hasPeople {
 	background-image: url(../icon/03D03.png);
+}
+
+.order_list {
+	height: 346px;
+}
+
+
+.order_item:not(:last-child) {
+	border-bottom: 1px solid black;
+	padding: 10px 0;
 }
